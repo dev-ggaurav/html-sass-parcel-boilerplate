@@ -1,0 +1,54 @@
+@use './mixins' as * ;
+@use './variables' as * ;
+
+$type-scale:(
+    sm:(
+        500:2.563rem,
+        400:2.25rem,
+        300:2rem,
+        200:1.813rem,
+        100:1.625rem
+    ),
+    md:(
+        500:3.188rem,
+        400:2.75rem,
+        300:2.375rem,
+        200:2.063rem,
+        100:1.75rem
+    ),
+    lg:(
+        500:4.313rem,
+        400:3.563rem,
+        300:3rem,
+        200:2.5rem,
+        100:2.063rem
+    )
+);
+
+:root{
+    @each $screen-size, $font-size in $type-scale {
+
+        @if $screen-size == sm {
+            @each $size, $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        }
+
+        @else if $screen-size == md {
+            @include mq(md){
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+
+        @else if $screen-size == lg {
+            @include mq(lg){
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+
+    }
+};
