@@ -1,0 +1,26 @@
+$colors: (
+    brand: (
+        100: #605DEC,
+        200: #B3FFE8,
+        300: #FFC3D8
+    ),
+    neutral: (
+        100: #FAFAFA,
+        200: #CBD4E6,
+        300: #A1B0CC,
+        400: #7C8DB0,
+        500: #657491,
+        600: #6E7491,
+        700: #52556F,
+        800: #36374A,
+        900: #27273F
+    )
+);
+
+:root{
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+};

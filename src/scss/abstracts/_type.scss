@@ -1,5 +1,4 @@
-@use './mixins' as * ;
-@use './variables' as * ;
+@use './mq' as * ;
 
 $type-scale:(
     sm:(

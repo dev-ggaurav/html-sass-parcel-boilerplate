@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
 .footer{
-    color: lightcoral;
+    color: var(--clr-brand-300);
     text-align: center;
 }
