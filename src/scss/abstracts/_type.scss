@@ -2,7 +2,7 @@
 
 $type-scale:(
     sm:(
-        500:2.563rem,
+        500:2.563rem, //var(--fs-heading-500)
         400:2.25rem,
         300:2rem,
         200:1.813rem,
@@ -29,14 +29,14 @@ $type-scale:(
 
         @if $screen-size == sm {
             @each $size, $value in $font-size {
-                --fs-#{$size}: #{$value};
+                --fs-heading-#{$size}: #{$value};
             }
         }
 
         @else if $screen-size == md {
             @include mq(md){
                 @each $size, $value in $font-size {
-                    --fs-#{$size}: #{$value};
+                    --fs-heading-#{$size}: #{$value};
                 }
             }
         }
@@ -44,7 +44,7 @@ $type-scale:(
         @else if $screen-size == lg {
             @include mq(lg){
                 @each $size, $value in $font-size {
-                    --fs-#{$size}: #{$value};
+                    --fs-heading-#{$size}: #{$value};
                 }
             }
         }
